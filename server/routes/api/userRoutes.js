@@ -20,11 +20,5 @@ router.route('/:userId')
     .put(updateUser)
     .delete(deleteUser);
 
-//  friendId routes
-router
-    .route('/:userId/friends/:friendId')
-    .post(addFriend)
-    .delete(deleteFriend);
-
 // Export router to make these routes available
 export default router;
