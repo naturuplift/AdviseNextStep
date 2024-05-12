@@ -1,14 +1,23 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const adviceRoutes = require('./api/routes/adviceRoutes');
+// Include packages needed for this application
+import express from 'express';
+// Imports the routing files from ./routes directory
+import routes from './routes/index.js';
+// import mongoose connection
+import db from './config/connection.js';
 
+// initializes a new instance of the Express application
 const app = express();
+// set port the server will listen to
+const PORT = process.env.PORT || 3002;
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// express app to use the routes defined
+app.use(routes);
 
-mongoose.connect('mongodb://localhost/adviseNextStep', { useNewUrlParser: true });
-
-app.use('/api/advice', adviceRoutes);
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
- 
+// sync mongoose models to the database
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`App listening on port ${PORT}!`);
+    });
+  });
