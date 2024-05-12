@@ -2,7 +2,7 @@
 import { Router } from 'express';
 // Import controller functions for user
 import {
-    getAllUsers, getUserById, createUser, updateUser, deleteUser, addFriend, deleteFriend
+    getAllUsers, getUserById, createUser, updateUser, deleteUser
 } from '../../controllers/userController.js';
 
 const router = Router();
