@@ -1,6 +1,6 @@
 import React from 'react';
-import AdviceForm from './AdviceForm';
-import AdviceDisplay from './AdviceDisplay';
+import AdviceForm from './components/AdviceForm';
+import AdviceDisplay from './components/AdviceDisplay';
 
 import logo from './logo.svg';
 import './App.css';
