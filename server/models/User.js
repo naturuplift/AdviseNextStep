@@ -1,5 +1,6 @@
 // import datatypes from mongoose package
 import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 // Schema to create User model
 const UserSchema = new mongoose.Schema(
@@ -18,11 +19,15 @@ const UserSchema = new mongoose.Schema(
         // Use regex to validate email
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
     },
+    password: {
+      type: String,
+      required: true
+  },
     // Array of ids advices created by user
     advices: [
         {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Advice',
+          ref: 'User',
         },
       ],
   },
@@ -35,6 +40,13 @@ const UserSchema = new mongoose.Schema(
     versionKey: false
   }
 );
+
+// Pre-save hook to hash password before saving
+UserSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next();
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
+});
 
 // Create virtual property to get count of advices
 UserSchema.virtual('adviceCount').get(function () {
