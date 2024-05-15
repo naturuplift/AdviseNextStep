@@ -1,22 +1,20 @@
 
 const initialState = {
-    loggedIn: false,
-    userData: {}
+    users: [],
+    error: null,
 };
 
 function userReducer(state = initialState, action) {
     switch (action.type) {
-        case 'LOG_IN':
+        case 'ADD_USER_SUCCESS':
             return {
                 ...state,
-                loggedIn: true,
-                userData: action.payload
+                users: [...state.users, action.payload],
             };
-        case 'LOG_OUT':
+        case 'ADD_USER_FAILURE':
             return {
                 ...state,
-                loggedIn: false,
-                userData: {}
+                error: action.error,
             };
         default:
             return state;
