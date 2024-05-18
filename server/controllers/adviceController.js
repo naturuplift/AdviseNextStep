@@ -22,10 +22,27 @@ const getAdviceById = async (req, res) => {
 };
 
 // Create a new advice entry
+// const createAdviceRequest = async (req, res) => {
+//     try {
+//         const advice = await Advice.create(req.body);
+//         res.json(advice);
+//     } catch (error) {
+//         res.status(500).json(error);
+//     }
+// };
 const createAdviceRequest = async (req, res) => {
     try {
-        const advice = await Advice.create(req.body);
-        res.json(advice);
+        // Hardcoded advice response
+        const hardcodedAdvice = {
+            title: "Stay Focused",
+            description: "Concentrate on your goals and persistently pursue them.",
+            category: "Motivation",
+            status: "active",
+            tags: ["focus", "goals", "persistence"]
+        };
+        // Simulate database creation logic
+        console.log("Creating new advice:", req.body); // Log the incoming request body
+        res.json(hardcodedAdvice); // Return the hardcoded advice
     } catch (error) {
         res.status(500).json(error);
     }
