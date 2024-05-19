@@ -15,6 +15,7 @@ function AdviceForm() {
     });
 
     const dispatch = useDispatch();
+    // const adviceResponse = useSelector(state => state.advice.advice);
 
     const handleSubmit = (event) => {
         event.preventDefault();
