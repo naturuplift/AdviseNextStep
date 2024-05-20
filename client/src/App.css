@@ -1,6 +1,8 @@
-
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
 }
 
 .Navbar {
@@ -10,11 +12,12 @@
   background-color: #282c34;
   padding: 10px 20px;
   color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .Navbar-title h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 .Navbar-login {
@@ -22,20 +25,71 @@
   align-items: center;
 }
 
-.Hero {
+.ChatContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 80vh; /* Adjust as needed */
-  background-color: #f5f5f5;
+  justify-content: flex-start;
+  flex-grow: 1;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
 }
 
-.Hero form, .Hero div {
+.ChatContainer form, .ChatContainer div {
   width: 100%;
   max-width: 600px; /* Adjust as needed */
   margin: 10px 0;
 }
+
+.AdviceForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.AdviceForm input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.AdviceForm button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.AdviceForm button:hover {
+  background-color: #0056b3;
+}
+
+.AdviceDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.AdviceDisplay p {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.AdviceDisplay p:last-child {
+  border-bottom: none;
+}
+
