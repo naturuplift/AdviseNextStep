@@ -30,6 +30,7 @@ const PORT = process.env.PORT || 3002;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 // express app to use the routes defined
 app.use(routes);
 
