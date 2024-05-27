@@ -5,6 +5,7 @@ import AdviceDisplay from './components/AdviceDisplay';
 import './App.css';
 
 function App() {
+  
   return (
     <div className="App">
       {/* Navbar */}
