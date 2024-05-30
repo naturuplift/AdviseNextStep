@@ -41,6 +41,7 @@ export const getAdviceFromOpenAI = async (req, res) => {
         },
       ],
       max_tokens: 1000,
+      
     });
 
     const recommendation = response.choices[0].message.content.trim();
