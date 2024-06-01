@@ -11,17 +11,17 @@ function App() {
       {/* Navbar */}
       <nav className="Navbar">
         <div className="Navbar-title">
-          <h1>Advisor</h1>
+          <h1>Welcome to Advisor</h1>
         </div>
         <div className="Navbar-login">
           <AddUserForm />
         </div>
       </nav>
 
-      {/* Chat-like Section for Advice Input/Output */}
-      <div className="ChatContainer">
-      <AdviceDisplay />
+      {/* Hero Section for Advice Input/Output */}
+      <div className="Hero">
         <AdviceForm />
+        <AdviceDisplay />
       </div>
     </div>
   );
