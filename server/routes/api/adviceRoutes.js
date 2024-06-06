@@ -1,5 +1,3 @@
-// adviceRoutes.js
-
 import { Router } from 'express';
 import {
   getAdvice,
