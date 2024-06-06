@@ -1,5 +1,4 @@
-// adviceController.js
-
+// Include packages needed for this application
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 
