@@ -7,6 +7,8 @@ import {
   deleteAdviceRequest,
   getAdviceFromOpenAI,
 } from '../../controllers/adviceController.js';
+import { getAdviceFromOpenAI } from '../../services/openaiService.js';
+
 
 const router = Router();
 
