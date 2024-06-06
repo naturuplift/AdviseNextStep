@@ -30,6 +30,7 @@ const getAdviceById = async (req, res) => {
 //         res.status(500).json(error);
 //     }
 // };
+
 const createAdviceRequest = async (req, res) => {
     try {
         // Hardcoded advice response
