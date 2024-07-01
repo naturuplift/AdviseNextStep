@@ -39,8 +39,17 @@ export const getAdviceFromOpenAI = async (req, res) => {
           content: userPrompt,
         },
       ],
-      max_tokens: 1000,
-      
+      temperature: 0.6, // Temperature controls the randomness of the response.
+      // The higher the temp, the more creative responses.
+      max_tokens: 200, // This sets the maximum number of tokens in the response.
+      // A high level definition is that a token is equivalent to a word.
+      top_p: 1.0, // This allows for a more diverse response if the number is higher.
+      // This supposed to 'Control the diversity via nucleus sampling'
+      // with: 1 = no sampling, the lower the value the more "focused" the response. 
+      frequency_penalty: 0.0,// Helps reduce the chance of the model repeating
+      // the same response.
+      presence_penalty: 0.0, // This Encourages the model to introduce new
+      // concepts as the user interacts with chatbot and doesn't repeat the same.
     });
 
     const recommendation = response.choices[0].message.content.trim();
